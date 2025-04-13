@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Tabs from './Tabs';
+import ClassProgress from './ClassProgress';
 import './App.css';
 
 function App() {
+  const classes = ['8A', '8B', '8C'];
+  const books = ['Yaprak Test', 'Genel Deneme', 'More&More'];
+  const [progress, setProgress] = useState({
+    '8A': { 'Yaprak Test': 0, 'Genel Deneme': 0, 'More&More': 0 },
+    '8B': { 'Yaprak Test': 0, 'Genel Deneme': 0, 'More&More': 0 },
+    '8C': { 'Yaprak Test': 0, 'Genel Deneme': 0, 'More&More': 0 },
+  });
+  const [selectedClass, setSelectedClass] = useState(0);
+
+  const updateProgress = (book, change) => {
+    setProgress((prevProgress) => {
+      const newProgress = { ...prevProgress };
+      newProgress[classes[selectedClass]][book] += change;
+      return newProgress;
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs classes={classes} onSelectClass={setSelectedClass} />
+      <ClassProgress
+        className={classes[selectedClass]}
+        books={books}
+        progress={progress[classes[selectedClass]]}
+        updateProgress={updateProgress}
+      />
     </div>
   );
 }

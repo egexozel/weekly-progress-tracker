@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Tabs from './Tabs';
+
 import ClassProgress from './ClassProgress';
 import './styles.css';
 

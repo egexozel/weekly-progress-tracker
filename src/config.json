@@ -1,0 +1,54 @@
+{
+  "6A": [
+    {
+      "name": "Student Book",
+      "number of tests": 215
+    },
+    {
+      "name": "Work Book",
+      "number of tests": 220
+    }
+  ],
+  "8A": [
+    {
+      "name": "Yaprak Test",
+      "number of tests": 60
+    },
+    {
+      "name": "Genel Deneme",
+      "number of tests": 20
+    },
+    {
+      "name": "More&More",
+      "number of tests": 32
+    }
+  ],
+  "8B": [
+    {
+      "name": "Yaprak Test",
+      "number of tests": 60
+    },
+    {
+      "name": "Genel Deneme",
+      "number of tests": 20
+    },
+    {
+      "name": "More&More",
+      "number of tests": 32
+    }
+  ],
+  "8C": [
+    {
+      "name": "Yaprak Test",
+      "number of tests": 60
+    },
+    {
+      "name": "Genel Deneme",
+      "number of tests": 20
+    },
+    {
+      "name": "More&More",
+      "number of tests": 32
+    }
+  ]
+}

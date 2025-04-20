@@ -15,16 +15,33 @@ body {
   border-radius: 8px;
 }
 
+@media (max-width: 600px) {
+  .App {
+    padding: 20px;
+  margin: 1em;
+  background-color: #2e2e3e; /* Darker background for content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+
+  }
+  
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  max-width: 600px; /* Same as .App */
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
   gap: 8px;
   margin: 0 auto;
   padding: 10px;
   border-radius: 8px;
-  margin-top: 10px;
-  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Shadow on top */
+  z-index: 2000; /* Ensure it stays on top */
 }
 
 .nav-item {
@@ -52,11 +69,10 @@ body {
   padding: 10px 0;
 }
 
-.controls {
+.book-progress .controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
 }
 
 .controls p {
@@ -78,4 +94,40 @@ body {
 
 .controls svg:hover {
   transform: scale(1.1);
-} 
+}
+
+.progress-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.progress-controls button,
+.progress-controls input[type="file"] {
+  background-color: #7d5ba6; /* Purple background */
+  color: #cdd6f4; /* Light text */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.progress-controls button:hover,
+.progress-controls input[type="file"]:hover {
+  background-color: #5a3e7a; /* Darker purple on hover */
+}
+
+.progress-controls svg {
+  width: 20px;
+  height: 20px;
+}
+
+.progress-controls button:hover svg,
+.progress-controls input[type="file"]:hover svg {
+  fill: #cdd6f4; /* Purple fill on hover */
+}
